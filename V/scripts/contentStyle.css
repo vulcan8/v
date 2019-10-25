@@ -1,0 +1,140 @@
+/* ===================== */
+
+/* USER CELL */
+
+/* ===================== */
+
+/* USERNAME AND NAME BOX */
+
+div[data-testid="primaryColumn"] div[data-testid="UserCell"] a[role="link"]:nth-child(1)>div {
+   display: flex;
+   flex-flow: row;
+}
+
+/* "FOLLOWS YOU" TEXT */
+
+div[data-testid="primaryColumn"] div[data-testid="UserCell"] a[role="link"]:nth-child(1)>div>div:nth-child(2) div[dir="auto"] {
+   background: #46b473;
+   color: white;
+   font-weight: bold;
+   text-align: center;
+}
+
+/* USER FULL NAME */
+
+div[data-testid="primaryColumn"] div[data-testid="UserCell"] a[role="link"]:nth-child(1)>div>div span {
+   margin-right: 5px;
+   font-size: 14px;
+}
+
+/* FOLLOW BUTTON */
+
+div[data-testid="primaryColumn"] div[data-testid="UserCell"] div[role="button"][data-testid$="follow"]:nth-child(1) {
+   min-height: 21px !important;
+}
+
+/* FOLLOW BUTTON TEXT */
+
+div[data-testid="primaryColumn"] div[data-testid="UserCell"] div[role="button"][data-testid$="follow"]:nth-child(1) span {
+   font-size: 13px;
+}
+
+/* DESCRIPTION */
+
+div[data-testid="primaryColumn"] div[data-testid="UserCell"]>div>div:nth-child(2)>div:nth-child(2) {
+   font-size: 11px;
+}
+
+.fenix-user-cell-data-box {
+   width: 110%;
+   margin-left: -10%;
+   /* height: 77px; */
+   font-family: sans-serif;
+   background: #FFFFFF00;
+   margin-top: 10px;
+   border-radius: 7px;
+   font-size: 11px;
+}
+
+.fenix-user-cell-data-box.no-description {
+   margin-top: 37px;
+}
+
+.fenix-data-row {
+   display: flex;
+   flex-flow: wrap;
+}
+
+.fenix-data-cell {
+   margin: 3px 5px;
+}
+
+/*
+ * Tooltip Styles
+ */
+
+/* Add this attribute to the element that needs a tooltip */
+
+[data-tooltip] {
+   position: relative;
+   z-index: 2;
+   cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+
+[data-tooltip]:before, [data-tooltip]:after {
+   visibility: hidden;
+   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+   opacity: 0;
+   pointer-events: none;
+}
+
+/* Position tooltip above the element */
+
+[data-tooltip]:before {
+   position: absolute;
+   bottom: 150%;
+   left: 50%;
+   margin-bottom: 5px;
+   margin-left: -80px;
+   padding: 7px;
+   width: 160px;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius: 3px;
+   background-color: #000;
+   background-color: hsla(0, 0%, 20%, 0.9);
+   color: #fff;
+   content: attr(data-tooltip);
+   text-align: center;
+   font-size: 14px;
+   line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+
+[data-tooltip]:after {
+   position: absolute;
+   bottom: 150%;
+   left: 50%;
+   margin-left: -5px;
+   width: 0;
+   border-top: 5px solid #000;
+   border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+   border-right: 5px solid transparent;
+   border-left: 5px solid transparent;
+   content: " ";
+   font-size: 0;
+   line-height: 0;
+}
+
+/* Show tooltip content on hover */
+
+[data-tooltip]:hover:before, [data-tooltip]:hover:after {
+   visibility: visible;
+   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+   opacity: 1;
+}

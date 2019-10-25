@@ -1,0 +1,53 @@
+{
+   "manifest_version": 2,
+   "name": "Instagram Emoji Poster",
+   "version": "1.0.0",
+   "description": "Automatically posts emojis in instagram feed.",
+   "browser_action": {
+      "default_icon": {
+         "128": "/images/icons/128.png",
+         "48": "/images/icons/48.png",
+         "16": "/images/icons/16.png"
+      },
+      "default_popup": "/popup/popup.html",
+      "default_title": "Instagram Emoji Poster"
+   },
+   "icons": {
+      "128": "/images/icons/128.png",
+      "48": "/images/icons/48.png",
+      "16": "/images/icons/16.png"
+   },
+   "background": {
+      "persistent": false,
+      "scripts": [
+         "/assets/jquery.min.js",
+         "/assets/chrome-custom-tools.js",
+         "/assets/moment-with-locales.min.js",
+         "/background/background.js"
+      ]
+   },
+   "content_scripts": [
+      {
+         "matches": [
+            "*://*.instagram.com/"
+         ],
+         "js": [
+            "/assets/jquery.min.js",
+            "/assets/uikit.min.js",
+            "/assets/font-awesome.min.js",
+            "/assets/chrome-custom-tools.js",
+            "/assets/moment-with-locales.min.js",
+            "/scripts/contentScript.js"
+         ],
+         "css": [
+            "/assets/custom.css",
+            "/scripts/contentStyle.css"
+         ]
+      }
+   ],
+   "permissions": [
+      "tabs",
+      "storage",
+      "*://*.instagram.com/"
+   ]
+}

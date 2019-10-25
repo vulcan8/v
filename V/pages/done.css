@@ -1,0 +1,22 @@
+.message-container * {
+   font-family: 'Abel';
+}
+
+.message-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   flex-direction: column;
+}
+
+h1.icon {
+   font-size: 100px;
+   color:#27b3c3 !important;
+   animation: float-no-shadow 5s ease-in-out infinite;
+}
+
+p {
+   font-size: 30px;
+   color: rgb(120, 120, 120);
+}

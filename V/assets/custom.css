@@ -1,0 +1,180 @@
+@font-face {
+   font-family: 'Abel';
+   src: url('/assets/Abel-Regular.ttf');
+}
+
+/* -------------------------- Uikit Custom Switcher ------------------------- */
+
+.uk-switch {
+   position: relative;
+   display: inline-block;
+   height: 34px;
+   width: 60px;
+   transform: scale(0.7);
+   -webkit-transform-origin: left top;
+}
+
+.uk-switch-slider-container {
+   width: 40px;
+   height: 30px;
+}
+
+/* Hide default HTML checkbox */
+
+.uk-switch input {
+   display: none;
+}
+
+/* Slider */
+
+.uk-switch-slider {
+   background-color: rgba(0, 0, 0, 0.22);
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   border-radius: 500px;
+   bottom: 0;
+   cursor: pointer;
+   transition-property: background-color;
+   transition-duration: .2s;
+   box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.07);
+}
+
+/* Switch pointer */
+
+.uk-switch-slider:before {
+   content: '';
+   background-color: #fff;
+   position: absolute;
+   width: 30px;
+   height: 30px;
+   left: 2px;
+   bottom: 2px;
+   border-radius: 50%;
+   transition-property: transform, box-shadow;
+   transition-duration: .2s;
+}
+
+/* Slider active color */
+
+input:checked+.uk-switch-slider {
+   background-color: #39f !important;
+}
+
+/* Pointer active animation */
+
+input:checked+.uk-switch-slider:before {
+   transform: translateX(26px);
+}
+
+/* Modifiers */
+
+.uk-switch-slider.uk-switch-on-off {
+   background-color: #f0506e;
+}
+
+input:checked+.uk-switch-slider.uk-switch-on-off {
+   background-color: #32d296 !important;
+}
+
+/* Style Modifier */
+
+.uk-switch-slider.uk-switch-big:before {
+   transform: scale(1.2);
+   box-shadow: 0 0 6px rgba(0, 0, 0, 0.22);
+}
+
+.uk-switch-slider.uk-switch-small:before {
+   box-shadow: 0 0 6px rgba(0, 0, 0, 0.22);
+}
+
+input:checked+.uk-switch-slider.uk-switch-big:before {
+   transform: translateX(26px) scale(1.2);
+}
+
+/* Inverse Modifier - affects only default */
+
+.uk-light .uk-switch-slider:not(.uk-switch-on-off) {
+   background-color: rgba(255, 255, 255, 0.22);
+}
+
+/* ---------------------------- Uikit Switch END ---------------------------- */
+
+#ee_crxScreenMessage {
+   animation: appear 250ms linear;
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   background: #000000ad;
+   /* z-index: -9999; */
+   /* vertical-align: middle; */
+   top: 0;
+   left: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 999999;
+}
+
+#ee_crxScreenMessage * {
+   color: #FFFFFF;
+}
+
+#ee_crxScreenMessage .crxScreenMessage__container {
+   width: initial !important;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+#ee_crxScreenMessage .crxScreenMessage__container h1 {
+   font-size: 50px;
+}
+
+#ee_crxScreenMessage .crxScreenMessage__container h3 {
+   font-size: 20px;
+   cursor: pointer;
+   color: #000000 !important;
+   background: #FFFFFF;
+   padding: 10px 20px;
+   border-radius: 7px;
+   margin-top: 20px;
+}
+
+@keyframes appear {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+
+@keyframes float {
+   0% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.3);
+      transform: translatey(0px);
+   }
+   50% {
+      box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.1);
+      transform: translatey(-13px);
+   }
+   100% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.3);
+      transform: translatey(0px);
+   }
+}
+
+@keyframes float-no-shadow {
+   0% {
+      transform: translatey(0px);
+   }
+   50% {
+      transform: translatey(-18px);
+   }
+   100% {
+      transform: translatey(0px);
+   }
+}
